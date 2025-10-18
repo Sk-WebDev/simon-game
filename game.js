@@ -2,7 +2,6 @@ var buttonColors = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
 var userPattern = [];
 var level = 0;
-var buttonCheck = 0;
 
 function nextSequence () {
     var randNum = Math.floor(Math.random() * 4);
@@ -11,7 +10,6 @@ function nextSequence () {
     playSound(randColor);
     animatePress(randColor);
     $("h1").text("Level " + ++level);
-    buttonCheck = 0;
     userPattern = [];
 }
 
@@ -34,8 +32,7 @@ $(".btn").on("click", function() {
     userPattern.push(userColor);
     playSound(userColor);
     animatePress(userColor);
-    checkAnswer(buttonCheck);
-    ++buttonCheck;
+    checkAnswer(userpattern.length - 1);
 });
 
 $(document).keypress(function() {
@@ -64,6 +61,6 @@ function checkAnswer (idx) {
 function resetGame () {
     gamePattern = [];
     userPattern = [];
-    buttonCheck = 0;
     level = 0;
+
 }
