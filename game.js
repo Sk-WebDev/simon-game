@@ -32,7 +32,7 @@ $(".btn").on("click", function() {
     userPattern.push(userColor);
     playSound(userColor);
     animatePress(userColor);
-    checkAnswer(userpattern.length - 1);
+    checkAnswer(userPattern.length - 1);
 });
 
 $(document).keypress(function() {
@@ -64,3 +64,4 @@ function resetGame () {
     level = 0;
 
 }
+
